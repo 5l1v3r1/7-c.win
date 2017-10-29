@@ -18,7 +18,7 @@ namespace _7CWin.Controllers
 
         // GET: /:id.:mode
         [HttpGet("/{id}.{mode}")]
-        public async Task<IActionResult> Index(string id, string mode)
+        public async Task<IActionResult> BinPage(string id, string mode)
         {
             var bin = await Db.Bin
                 .Where(r => r.Id == id)
@@ -45,7 +45,7 @@ namespace _7CWin.Controllers
 
             if (bin != null)
             {
-                return View("~/Views/Bin/Index.cshtml", new BinIndexModel
+                return View("~/Views/Bin/BinPage.cshtml", new BinIndexModel
                 {
                     ciphertext = bin.Ciphertext,
                     iv = bin.Iv

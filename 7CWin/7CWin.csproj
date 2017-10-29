@@ -4,7 +4,6 @@
     <RootNamespace>_7CWin</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
