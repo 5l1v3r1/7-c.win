@@ -3,6 +3,7 @@
     <head>
         <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.css" integrity="sha256-Zg9EoB1hB8n8EVhx/D07lT5dD3ZZqjJbxlDmHx8jsMc=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/theme/lesser-dark.min.css" integrity="sha256-Wuunor/eYqtA0Arnd0/W7M4uy08DwZW49gIkqdj5eO4=" crossorigin="anonymous" />
         <link href="~/css/Layout.css" rel="stylesheet">
         @RenderSection("AddToHead", required: false)
         <title>@ViewData["Title"]</title>
@@ -13,7 +14,9 @@
         </nav>
         @RenderBody()
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.js" integrity="sha256-eue5ceZRwKVQ1OXOZSyU7MXCTZMlqsPi/TOIqh1Vlzo=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/addon/mode/loadmode.min.js" integrity="sha256-NhoM0kprgEMUKmJy91g/U5RLkbXENG0w/DmhIuAGB7Y=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/mode/meta.min.js" integrity="sha256-mSf+cTZj1WYCiI/pv3/tzWieJi+9kzqZQSmyqdxRyFM=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" crossorigin="anonymous"></script>
         <script src="~/js/bundle.min.js"></script>
         @RenderSection("Scripts", required: false)
     </body>

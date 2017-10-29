@@ -4,7 +4,8 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
     entry: {
-        mainpage: ["./mainpage.js"]
+        mainpage: ["./mainpage.js"],
+        binpage: ["./binpage.js"]
     },
     output: {
         path: path.join(__dirname, "../../wwwroot/js"),
@@ -23,7 +24,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new UglifyJSPlugin(),
+        
         new webpack.BannerPlugin({banner: `
         WHAT ARE YOU DOING HERE?! REEEEEEEE
         `, raw: false, entryOnly: true}),

@@ -24,7 +24,9 @@ namespace _7CWin.Models
             {
                 entity.ToTable("bin");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Id)
+                .HasMaxLength(12)
+                .HasColumnName("id");
 
                 entity.Property(e => e.Ciphertext)
                     .IsRequired()

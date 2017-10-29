@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using _7CWin.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace _7CWin.Controllers
 {
@@ -15,11 +16,42 @@ namespace _7CWin.Controllers
             Db = db;
         }
 
-        // GET: /bin/:id
-        [HttpGet("/bin/{id}")]
-        public IActionResult Index()
+        // GET: /bin/:id.:mode
+        [HttpGet("/bin/{id}.{mode}")]
+        public async Task<IActionResult> Index(string id, string mode)
         {
-            return View();
+            var bin = await Db.Bin
+                .Where(r => r.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (bin != null)
+            {
+                return View(new BinIndexModel
+                {
+                    ciphertext = bin.Ciphertext,
+                    iv = bin.Iv,
+                    mode = mode.ToLower()
+                });
+            }
+            return NotFound("This bin doesn't exist");
+        }
+        // GET: /bin/:id.:mode
+        [HttpGet("/bin/{id}")]
+        public async Task<IActionResult> BinNoMode(string id)
+        {
+            var bin = await Db.Bin
+                .Where(r => r.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (bin != null)
+            {
+                return View("~/Views/Bin/Index.cshtml", new BinIndexModel
+                {
+                    ciphertext = bin.Ciphertext,
+                    iv = bin.Iv
+                });
+            }
+            return NotFound("This bin doesn't exist");
         }
     }
 }

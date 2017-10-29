@@ -6,7 +6,7 @@ var randombytes = require("randombytes");
 const editor = CodeMirror.fromTextArea(document.getElementById("codemirror-area"),
 {
     mode: "javascript",
-    theme: "default",
+    theme: "lesser-dark",
     lineNumbers: true
 })
 
