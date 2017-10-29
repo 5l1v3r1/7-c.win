@@ -1,0 +1,10 @@
+﻿@model BinIndexModel
+
+@{ 
+    ViewData["Title"] = "7-c.win";
+}
+@section Scripts {
+    <script src="~/js/binpage.min.js"></script>
+}
+
+<textarea rows="10" cols="50" name="content" id="codemirror-area">@JsonConvert.SerializeObject(Model)</textarea>

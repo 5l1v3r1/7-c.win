@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _7CWin.Controllers
 {
-    public class BinController : Controller
+    public class BinPController : Controller
     {
         public _7cwinContext Db;
-        public BinController(_7cwinContext db)
+        public BinPController(_7cwinContext db)
         {
             Db = db;
         }
@@ -45,7 +45,7 @@ namespace _7CWin.Controllers
 
             if (bin != null)
             {
-                return View("/Views/Bin/BinPage.cshtml", new BinIndexModel
+                return View("~/Views/BinP/BinPage.cshtml", new BinIndexModel
                 {
                     ciphertext = bin.Ciphertext,
                     iv = bin.Iv
