@@ -16,8 +16,8 @@ namespace _7CWin.Controllers
             Db = db;
         }
 
-        // GET: /bin/:id.:mode
-        [HttpGet("/bin/{id}.{mode}")]
+        // GET: /:id.:mode
+        [HttpGet("/{id}.{mode}")]
         public async Task<IActionResult> Index(string id, string mode)
         {
             var bin = await Db.Bin
@@ -33,10 +33,10 @@ namespace _7CWin.Controllers
                     mode = mode.ToLower()
                 });
             }
-            return NotFound("This bin doesn't exist");
+            return Redirect("/");
         }
-        // GET: /bin/:id.:mode
-        [HttpGet("/bin/{id}")]
+        // GET: /:id.:mode
+        [HttpGet("/{id}")]
         public async Task<IActionResult> BinNoMode(string id)
         {
             var bin = await Db.Bin
@@ -51,7 +51,7 @@ namespace _7CWin.Controllers
                     iv = bin.Iv
                 });
             }
-            return NotFound("This bin doesn't exist");
+            return Redirect("/");
         }
     }
 }

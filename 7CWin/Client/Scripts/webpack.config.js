@@ -24,7 +24,7 @@ module.exports = {
         ]
     },
     plugins: [
-        
+        new UglifyJSPlugin(),
         new webpack.BannerPlugin({banner: `
         WHAT ARE YOU DOING HERE?! REEEEEEEE
         `, raw: false, entryOnly: true}),

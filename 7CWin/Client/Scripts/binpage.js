@@ -31,6 +31,8 @@ try {
         lineNumbers: true
     });
 
+    editor.setSize(null, "95%");
+    
     if (val.mode && info) {
         editor.setOption("mode", info.mime);
         codemirror.autoLoadMode(editor, info.mode);

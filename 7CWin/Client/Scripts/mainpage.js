@@ -9,7 +9,7 @@ const editor = CodeMirror.fromTextArea(document.getElementById("codemirror-area"
     theme: "lesser-dark",
     lineNumbers: true
 })
-
+editor.setSize(null, "95%");
 $("#postbin").on("submit", (e) => {
     e.preventDefault();
 
@@ -27,7 +27,7 @@ $("#postbin").on("submit", (e) => {
         url: "/createbin",
         data: $.param(Data),
         success: (res) => {
-            window.location = "/bin/" + res + "#" + encText.key.toString()
+            window.location = "/" + res + "#" + encText.key.toString()
         },
         error: (err) => {
             alert("An error happened.");

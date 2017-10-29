@@ -8,14 +8,12 @@
 @section AddToHead {
     <link href="~/css/Home.css" rel="stylesheet" />
 }
-<div class="container-fluid" style="width: 100%;">
-    <div class="col-md-4 col-xs-10 col-lg-4 col-sm-10 center">
-        @using (Html.BeginForm(null, "/createbin", FormMethod.Post, new { id = "postbin" })) {
-            <textarea rows="10" cols="50" name="content" id="codemirror-area" style="width: 100%;"></textarea>
-                <br />
-            <div class="postbutton">
-                <button type="submit" class="btn btn-dark pbtn">Post</button>
-            </div>
-        }
-    </div>
-</div>
+@section AddToNavbar {
+    <form class="form-inline my-2 my-lg-0" id="postbin">
+        @Html.AntiForgeryToken()
+        <button class="btn btn-dark" type="submit">Create</button>
+    </form>
+}
+
+
+<textarea rows="10" cols="50" name="content" id="codemirror-area"></textarea>
