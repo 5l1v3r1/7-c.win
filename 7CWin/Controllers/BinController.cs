@@ -45,7 +45,7 @@ namespace _7CWin.Controllers
 
             if (bin != null)
             {
-                return View("~/Views/Bin/BinPage.cshtml", new BinIndexModel
+                return View("/Views/Bin/BinPage.cshtml", new BinIndexModel
                 {
                     ciphertext = bin.Ciphertext,
                     iv = bin.Iv
