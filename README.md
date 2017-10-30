@@ -1,5 +1,7 @@
 # 7-c.win
 
+[![Build Status](https://travis-ci.org/Haskaalo/7-c.win.svg)](https://travis-ci.org/Haskaalo/7-c.win)
+
 ![](https://raw.githubusercontent.com/Haskaalo/images/master/7-c.win/view_bin.png)
 [7-c.win](https://7-c.win) is a website that let you create **encrypted** bin which mean the server or anyone without the key cannot see the content of the bin
 
