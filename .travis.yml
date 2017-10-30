@@ -1,0 +1,28 @@
+sudo: required
+
+language: csharp
+
+mono: none
+dotnet: 2.0.0
+
+dist: trusty
+
+before_script:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install 8
+  - nvm use 8
+  - npm install yarn -g
+
+script:
+  - bash build.sh
+
+before_deploy:
+  - cd ./obj/publish/ && tar -czf ../../7cwin-$TRAVIS_TAG.tar.gz . && cd ../../
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_KEY
+  file: 7cwin-$TRAVIS_TAG.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
