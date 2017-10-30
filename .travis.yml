@@ -17,7 +17,7 @@ script:
   - bash build.sh
 
 before_deploy:
-  - cd ./obj/publish/ && tar -czf ../../7cwin-$TRAVIS_TAG.tar.gz . && cd ../../
+  - cd ./7CWin/obj/publish/ && tar -czf ../../../7cwin-$TRAVIS_TAG.tar.gz . && cd ../../../
 
 deploy:
   provider: releases
